@@ -34,3 +34,73 @@ CREATE TABLE users (
 
 INSERT INTO users (name, email)
   VALUES ('Jerry', 'jerry@example.com'), ('George', 'george@example.com');
+
+## API
+
+GET /users
+```
+[
+    {
+        "id": 1,
+        "name": "Jerry",
+        "email": "jerry@example.com"
+    },
+    {
+        "id": 2,
+        "name": "George",
+        "email": "george@example.com"
+    },
+    {
+        "id": 3,
+        "name": "Kramer",
+        "email": "kramer@example.com"
+    },
+    {
+        "id": 4,
+        "name": "Elaine",
+        "email": "elaine@example.com"
+    }
+]
+```
+
+GET /users/id
+```
+[
+    {
+        "id": 2,
+        "name": "George",
+        "email": "george@example.com"
+    }
+]
+```
+
+POST /users
+BODY
+```
+{
+    "name": "Kramer",
+    "email": "kramer@example.com"
+}
+```
+RESPONSE
+```
+User added with ID: 14
+```
+
+PATCH /users/id
+BODY
+```
+{
+    "name": "Kramer",
+    "email": "kramer@example.com"
+}
+```
+RESPONSE
+```
+User modified with ID: 4
+```
+
+DELETE /users/id
+```
+User deleted with ID: 4
+```
